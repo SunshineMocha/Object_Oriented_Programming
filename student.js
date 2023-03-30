@@ -26,10 +26,13 @@ class Student{ // classe solitamente si definisce con la maiuscola
         // COGNOME: Consigliere
         // ETA: 34
         // MEDIA: 5.4
+        return `NOME: ${this.name} \n COGNOME: ${this.surname} \n ETA':  ${this.calculateAge()} \n MEDIA: ${this.calculateMean()}\n`
     }
 
     calculateAge(){
         // Cercare come prendere l'anno da JS, deve restituire l'età
+        const age = new Date().getFullYear() - this.yob;
+        return age;
     }
 }
 

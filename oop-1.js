@@ -15,5 +15,7 @@ const teacher = new Teacher ('Andrea', 'Asioli', 1978, [student1, student2, stud
 console.log(student2.calculateMean()); // Chiamata della funzione sull'oggetto, come metodo.
 // qui c'era una function FindBestStudentOfTeacher(teacher), ma siccome abbiamo il file teacher.js che deve usarla, possiamo spostarla su teacher.js. Il codice della funzione è dentro le graffe
 console.log(teacher.findBestStudent());
-
 // COMPITO: Completare le nuove funzioni in student.js e teacher.js
+
+console.log(teacher.toString());
+console.log(student2.toString());

@@ -26,10 +26,13 @@ class Teacher{
         // COGNOME: Asioli
         // ETA: 45
         // MIGLIOR STUDENTE: Valentina Cherubini
+        return `NOME: ${this.name} \n COGNOME: ${this.surname} \n ETA':  ${this.calculateAge()} \n MIGLIOR STUDENTE: \n ${this.findBestStudent()}\n`
     }
 
     calculateAge(){
         // Cercare come prendere l'anno da JS, deve restituire l'età
+        const age = new Date().getFullYear() - this.yob;
+        return age;
     }
 }
 
