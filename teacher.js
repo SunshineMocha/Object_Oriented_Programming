@@ -1,8 +1,6 @@
-class Teacher{
+class Teacher extends Person{
     constructor(name, surname, yob, students){
-        this.name = name;
-        this.surname = surname;
-        this.yob = yob;
+        super(name, surname, yob); // usa il costruttore di tuo papà (person) per costruire la parte persona di student (con gli attributi)
         this.students = students; // l'insegnante ha degli studenti
     }
 
@@ -20,20 +18,18 @@ class Teacher{
         return bestStudent;
     }
 
+    // Qui una volta c'era la funzione toString completa che lavorava su tutta la lista name, surname, yob, students. Ora lavoriamo solo su grades
+
     toString(){
         // ritorna una stringa 
         // NOME: Andrea
         // COGNOME: Asioli
         // ETA: 45
         // MIGLIOR STUDENTE: Valentina Cherubini
-        return `NOME: ${this.name} \n COGNOME: ${this.surname} \n ETA':  ${this.calculateAge()} \n MIGLIOR STUDENTE: \n ${this.findBestStudent()}\n`
+        return super.toString() + `MIGLIOR STUDENTE: \n${this.findBestStudent().name} ${this.findBestStudent().surname} (media: ${this.findBestStudent().calculateMean()})\n`;
+        // richiama il toString del genitore con super.toString() e aggiunge il resto
     }
-
-    calculateAge(){
-        // Cercare come prendere l'anno da JS, deve restituire l'età
-        const age = new Date().getFullYear() - this.yob;
-        return age;
-    }
+    // Qui una volta c'era la funzione CalculateAge, che ora fa parte di Person, che ha già tutti i dati dei figli, indistintamente da student o teacher
 }
 
 /*
